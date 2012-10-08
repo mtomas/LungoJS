@@ -28,7 +28,7 @@ LUNGO.Router = (function(lng, undefined) {
         var target = ELEMENT.SECTION + section_id;
 
         if (_existsTarget(target)) {
-            lng.dom(current).removeClass(CLASS.HIDE_REVOKE).removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
+            lng.dom(current).removeClass(CLASS.HIDE_REVOKE).removeClass(CLASS.SHOW).addClass(CLASS.HIDE_REVOKE);
             lng.dom(target).removeClass(CLASS.SHOW_REVOKE).addClass(CLASS.SHOW).trigger(TRIGGER.LOAD);
 
             lng.Router.History.add(section_id);
