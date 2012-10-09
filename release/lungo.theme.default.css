@@ -1,3 +1,4 @@
+@import "lungo.theme.default.font.css";
 /**
  * Stylesheet
  *
@@ -6,11 +7,10 @@
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
-
-@import "lungo.theme.default.font.css";
-
 .app {
-  background: #000000;
+  /* bg color changed  from #000000 to prevent weird transition visual effect - bg color is same as the article default background color*/
+
+  background: #EDEDED;
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 /* @group <header> & <footer> & <article> */

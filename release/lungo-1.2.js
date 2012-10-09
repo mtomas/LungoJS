@@ -12,7 +12,7 @@
  *                                 |  $$$$$$/
  *                                  \______/
  *
- * @copyright 2011-2012 TapQuo Inc (c)
+ * @copyright 2011 TapQuo Inc (c)
  * @license   http://www.github.com/tapquo/lungo/blob/master/LICENSE.txt
  * @version   1.2
  * @link      https://github.com/TapQuo/Lungo.js
@@ -30,9 +30,7 @@ LUNGO.Data || (LUNGO.Data = {});
 LUNGO.Sugar || (LUNGO.Sugar = {});
 LUNGO.View || (LUNGO.View = {});
 LUNGO.Device || (LUNGO.Device = {});
-LUNGO.ready || (LUNGO.ready = Quo().ready);
-
-/**
+LUNGO.ready || (LUNGO.ready = Quo().ready);/**
  * Object with data-attributes (HTML5) with a special <markup>
  *
  * @namespace LUNGO
@@ -106,11 +104,9 @@ LUNGO.Constants = {
         LOADING_RESOURCE: 'ERROR: Loading resource.'
     }
 
-};
-
-/**
+};/** 
  * Lungo sandbox APP initialization
- *
+ * 
  * @namespace LUNGO
  * @class App
  *
@@ -151,9 +147,7 @@ LUNGO.App = (function(lng, undefined) {
         get: get
     };
 
-})(LUNGO);
-
-/**
+})(LUNGO);/**
  * Contains all the common functions used in Lungo.
  *
  * @namespace LUNGO
@@ -374,9 +368,7 @@ LUNGO.Core = (function(lng, $$, undefined) {
         findByProperty: findByProperty
     };
 
-})(LUNGO, Quo);
-
-/**
+})(LUNGO, Quo);/**
  * LungoJS Dom Handler
  *
  * @namespace LUNGO
@@ -396,9 +388,7 @@ LUNGO.Core = (function(lng, $$, undefined) {
 */
 LUNGO.dom = function(selector) {
     return $$(selector);
-};
-
-/**
+};/**
  * External Data & Services Manager
  *
  * @namespace LUNGO
@@ -540,9 +530,7 @@ LUNGO.Service = (function(lng, $$, undefined) {
         Settings: $$.ajaxSettings
     };
 
-})(LUNGO, Quo);
-
-/**
+})(LUNGO, Quo);/**
  * ?
  *
  * @namespace LUNGO
@@ -603,9 +591,7 @@ LUNGO.Fallback = (function(lng, undefined) {
     	positionFixed: positionFixed
     }
 
-})(LUNGO);
-
-/**
+})(LUNGO);/**
  * Handles the <sections> and <articles> to show
  *
  * @namespace LUNGO
@@ -635,8 +621,10 @@ LUNGO.Router = (function(lng, undefined) {
         var target = ELEMENT.SECTION + section_id;
 
         if (_existsTarget(target)) {
+            console.log('Current: ', current)
+            console.log('Target: ', target)
             lng.dom(current).removeClass(CLASS.HIDE_REVOKE).removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
-            lng.dom(target).removeClass(CLASS.SHOW_REVOKE).addClass(CLASS.SHOW).trigger(TRIGGER.LOAD);
+            lng.dom(target).removeClass(CLASS.SHOW_REVOKE).removeClass(CLASS.HIDE).addClass(CLASS.SHOW).trigger(TRIGGER.LOAD);
 
             lng.Router.History.add(section_id);
         }
@@ -720,11 +708,9 @@ LUNGO.Router = (function(lng, undefined) {
         back: back
     };
 
-})(LUNGO);
-
-/**
+})(LUNGO);/** 
  * Stores the displayed <sections> as a historical.
- *
+ * 
  * @namespace LUNGO.Router
  * @class History
  *
@@ -775,9 +761,7 @@ LUNGO.Router.History = (function(undefined) {
         removeLast: removeLast
     };
 
-})();
-
-/**
+})();/**
  * Initialize the <articles> layout of a certain <section>
  *
  * @namespace LUNGO.View
@@ -864,9 +848,7 @@ LUNGO.View.Article = (function(lng, undefined) {
         showReferenceLinks: showReferenceLinks
     };
 
-})(LUNGO);
-
-/**
+})(LUNGO);/**
  *
  *
  * @namespace LUNGO.View
@@ -902,9 +884,7 @@ LUNGO.View.Resize = (function(lng, undefined) {
         toolbars: toolbars
     };
 
-})(LUNGO);
-
-/**
+})(LUNGO);/**
  * Lungo Template system
  *
  * @namespace LUNGO.View
@@ -998,9 +978,7 @@ LUNGO.View.Template = (function(lng, undefined) {
         markup: markup
     };
 
-})(LUNGO);
-
-/**
+})(LUNGO);/**
  * Lungo Data-Binding system
  *
  * @namespace LUNGO.View.Template
@@ -1077,9 +1055,7 @@ LUNGO.View.Template.Binding = (function(lng, undefined) {
         dataAttribute: dataAttribute
     };
 
-})(LUNGO);
-
-/**
+})(LUNGO);/**
  * Auto generate lists based on Template and Data-Binding system
  *
  * @namespace LUNGO.View.Template
@@ -1191,9 +1167,7 @@ LUNGO.View.Template.List = (function(lng, undefined) {
         prepend: prepend
     };
 
-})(LUNGO);
-
-/**
+})(LUNGO);/**
  * Wrapper of the third library iScroll
  *
  * @namespace LUNGO.View
@@ -1412,9 +1386,7 @@ LUNGO.View.Scroll = (function(lng, undefined) {
         last: last
     };
 
-})(LUNGO);
-
-/**
+})(LUNGO);/**
  * Initialize the <articles> layout of a certain <section>
  *
  * @namespace LUNGO.View
@@ -1477,9 +1449,7 @@ LUNGO.View.Aside = (function(lng, undefined) {
         hide: hide
     };
 
-})(LUNGO);
-
-/**
+})(LUNGO);/**
  * Initialize the <articles> layout of a certain <section>
  *
  * @namespace LUNGO.View
@@ -1565,9 +1535,7 @@ LUNGO.View.Element = (function(lng, undefined) {
         progress: progress
     };
 
-})(LUNGO);
-
-/**
+})(LUNGO);/**
  * Object with data-attributes (HTML5) with a special <markup>
  *
  * @namespace LUNGO.Attributes
@@ -1626,9 +1594,7 @@ LUNGO.Attributes.Data = {
         selector: 'header, footer',
         html: '<a href="#back" data-target="section" class="onleft button default"><span class="icon {{value}}"></span></a>'
     }
-};
-
-/**
+};/**
  * Temporary cache system
  *
  * @namespace LUNGO.Data
@@ -1710,9 +1676,7 @@ LUNGO.Data.Cache = (function(lng, undefined) {
         exists: exists
     };
 
-})(LUNGO);
-
-/**
+})(LUNGO);/**
  * Wrapper for using WebSql (HTML5 feature)
  *
  * @namespace LUNGO.Data
@@ -1928,9 +1892,7 @@ LUNGO.Data.Sql = (function(lng, undefined) {
         execute: execute
     };
 
-})(LUNGO);
-
-/**
+})(LUNGO);/**
  * Wrapper for using LocalStorage & SessionStorage (HTML5 Feature)
  *
  * @namespace LUNGO.Data
@@ -1998,9 +1960,7 @@ LUNGO.Data.Storage = (function(lng, undefined) {
     	persistent: persistent
     };
 
-})(LUNGO);
-
-/**
+})(LUNGO);/**
  * Boot for a new LungoJS Application instance
  *
  * @namespace LUNGO
@@ -2022,9 +1982,7 @@ LUNGO.Boot = (function(lng, undefined) {
         lng.Boot.Stats.start();
     };
 
-})(LUNGO);
-
-/**
+})(LUNGO);/**
  * Load Resources
  *
  * @namespace LUNGO.Boot
@@ -2121,9 +2079,7 @@ LUNGO.Boot.Resources = (function(lng, $$, undefined) {
         start: start
     };
 
-})(LUNGO, Quo);
-
-/**
+})(LUNGO, Quo);/**
  * Save in LungoJS.com the use of the service for further ranking
  *
  * @namespace LUNGO.Boot
@@ -2163,9 +2119,7 @@ LUNGO.Boot.Stats = (function(lng, undefined) {
         start: start
     };
 
-})(LUNGO);
-
-/**
+})(LUNGO);/**
  * Initialize the Layout of LungoJS (if it's a mobile environment)
  *
  * @namespace LUNGO.Boot
@@ -2232,9 +2186,7 @@ LUNGO.Boot.Layout = (function(lng, undefined) {
         start: start
     };
 
-})(LUNGO);
-
-/**
+})(LUNGO);/**
  * Initialize the <article> element
  *
  * @namespace LUNGO.Boot
@@ -2294,9 +2246,7 @@ LUNGO.Boot.Article = (function(lng, undefined) {
         start: start
     };
 
-})(LUNGO);
-
-/**
+})(LUNGO);/**
  * Make an analysis of Data attributes in HTML elements and creates a <markup>
  * based on each data type.
  *
@@ -2339,9 +2289,7 @@ LUNGO.Boot.Data = (function(lng, undefined) {
         start: start
     };
 
-})(LUNGO);
-
-/**
+})(LUNGO);/**
  * Initialize the automatic DOM UI events
  *
  * @namespace LUNGO.Boot
@@ -2460,9 +2408,7 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         start: start
     };
 
-})(LUNGO);
-
-/**
+})(LUNGO);/**
  * Initialize the <section> element
  *
  * @namespace LUNGO.Boot
